@@ -19,8 +19,8 @@ int main() {
     x=c-1;
 
     if(d=='U') dir=3;
-    else if(d=='R') dir=2;
-    else if(d=='L') dir=1;
+    else if(d=='R') dir=1;
+    else if(d=='L') dir=2;
     else if(d=='D') dir=0;
 
     while(t>0){
