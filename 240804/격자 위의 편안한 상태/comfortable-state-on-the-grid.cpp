@@ -20,7 +20,7 @@ bool isComfort(int y, int x){
         if(a[ny][nx]) cnt++; 
     }
 
-    return (cnt>=3);
+    return (cnt==3);
 }
 
 
