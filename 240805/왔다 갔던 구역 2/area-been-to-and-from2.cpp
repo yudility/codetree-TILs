@@ -16,9 +16,15 @@ int main() {
         cin >> x >> d;
 
         for(int j=0; j<x; j++){
-            if(d=='R') now++;
-            else now--;
-            a[now]++;
+            if(d=='R') {
+                now++;
+                a[now-1]++;
+            }
+            else {
+                now--;
+                a[now]++;
+            }
+            
         }
     }
 
