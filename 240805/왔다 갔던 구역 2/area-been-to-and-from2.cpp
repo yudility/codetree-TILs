@@ -22,7 +22,7 @@ int main() {
         }
     }
 
-    for(int i=0; i<1002; i++ ){
+    for(int i=0; i<2004; i++ ){
         if(a[i]>=2) cnt++;
     }
 
