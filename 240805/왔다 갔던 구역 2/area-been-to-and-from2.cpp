@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, cnt, now=501;
-int a[1002];
+int n, cnt, now=1002;
+int a[2004];
 
 int main() {
     
