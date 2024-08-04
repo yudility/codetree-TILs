@@ -3,7 +3,7 @@
 using namespace std;
 
 const int MAX = 1000;
-int dy[4]={-1, 0, 1, 0};
+int dy[4]={1, 0, -1, 0};
 int dx[4]={0, -1, 0, 1};
 int n, k, cnt;
 char a[MAX][MAX];
@@ -52,12 +52,12 @@ int main() {
         
         cnt++;
         
-        if(a[y][x]=='/'){ //여기 수정하기
+        if(a[y][x]=='\\'){ //여기 수정하기
            dir = 3 - dir;
         }   
-        else{ // '\'인 경우
-            if(dir % 2 == 0) dir++;
-            else dir--;
+        else{ // '/'인 경우
+            if(dir % 2 == 0) dir = (dir+1)%4;
+            else dir = (dir-1)%4;
         }
 
         y = y + dy[dir];
