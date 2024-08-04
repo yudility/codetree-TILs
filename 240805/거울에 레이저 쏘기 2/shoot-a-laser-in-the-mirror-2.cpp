@@ -41,7 +41,7 @@ int main() {
     }
     else if(dir==2){
         y = n-1;
-        x = (k-1) % n;
+        x = (n-1)-(k-1) % n;
     }
     else{
         x = 0;
