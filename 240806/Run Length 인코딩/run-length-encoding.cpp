@@ -16,7 +16,7 @@ int main() {
         }
         else if(str[i]!=str[i+1]){
             run_length[idx]=str[i];
-            run_length[idx+1]=char(cnt+48);
+            run_length[idx+1]=cnt+48;
             cnt=1;
             idx += 2;
         }
