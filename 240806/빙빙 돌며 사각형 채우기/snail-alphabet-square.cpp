@@ -41,7 +41,7 @@ int main() {
 
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
-            char alpa=65+(a[i][j])%92;
+            char alpa=65+(a[i][j])%26;
             cout << alpa << " ";
         }
         cout << "\n";
