@@ -26,7 +26,10 @@ public class Main {
         for(int i=0;i<n;i++){
             p[i] = sc.nextInt();
         }
-
-        System.out.print(end(p,gcd(p[0],p[1]), p[0]*p[1]/gcd(p[0],p[1]), 2));
+        if(p.length==1){
+            System.out.print(p[0]);
+        }else{
+            System.out.print(end(p,gcd(p[0],p[1]), p[0]*p[1]/gcd(p[0],p[1]), 2));
+        }
     }
 }
