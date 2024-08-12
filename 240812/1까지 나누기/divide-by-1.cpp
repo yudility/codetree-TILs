@@ -2,19 +2,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, cnt;
+int n, cnt, t;
 
 int main() {
 
     cin >> n;
+    t=n;
     for(int i=1; i<=n; i++){
+        if(t<=1) break;
         cnt++;
-        n=(n/i); 
-        if(n/i<=1) {
-            cnt++;
-            break;
-        }
+        t=(t/i); 
     }
+    
 
     cout << cnt ;
 
