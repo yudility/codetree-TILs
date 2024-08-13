@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, u;
+int n, u, a[10][10];
 
 int main() {
 
@@ -10,7 +10,7 @@ int main() {
     int now=1;
     for(int j=n-1; j>=0; j--){
         if(u==0){
-            for(int i=n; i>=0; i--){
+            for(int i=n-1; i>=0; i--){
                 a[i][j] = now;
                 now++;
             }
@@ -20,6 +20,7 @@ int main() {
                 a[i][j] = now;
                 now++;
             }
+            u=0;
         }
     }
 
