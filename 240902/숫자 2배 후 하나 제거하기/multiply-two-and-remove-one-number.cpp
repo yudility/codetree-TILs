@@ -15,9 +15,9 @@ int main() {
     //숫자 하나골라서 2배하기
     for(int i=0; i<n; i++){ 
         a[i]*=2;
-        vector<int> v;
         //하나 골라서 제외하기
         for(int j=0; j<n; j++){
+            vector<int> v;
             //제외한 원소 빼고 다 담기
             for(int k=0; k<n; k++){
                 if(k==j) continue;
@@ -25,8 +25,8 @@ int main() {
             }
             
             int sum=0;
-            for(int k=0; k<v.size()-1; k++){
-                sum+= abs(v[k]-v[k+1]);
+            for(int k=1; k<v.size(); k++){
+                sum+= abs(v[k]-v[k-1]);
             }
             ret=min(ret, sum);
         }
