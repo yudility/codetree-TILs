@@ -16,7 +16,7 @@ int main() {
         int cnt=0;
         for(int i=0; i<n; i++){ // ai 정하기
             for(int j=i+1; j<n; j++){ // aj 정하기
-                if((a[i]+a[j]/2 == k)) cnt++;
+                if((a[j]-k) == (k-a[i])) cnt++;
             }
         }
         ret = max(ret, cnt);
