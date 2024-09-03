@@ -19,10 +19,10 @@ int main() {
             memset(p, 0, sizeof(p)); 
 
             for(int k=0; k<n; k++){
-                if(x[k]<i && y[k] > i ) p[0]++;
-                else if(x[k]>i && y[k] > i ) p[1]++;
-                else if(x[k]>i && y[k] < i ) p[2]++;
-                else if(x[k]<i && y[k] < i ) p[3]++;
+                if(x[k]<i && y[k] > j ) p[0]++;
+                else if(x[k]>i && y[k] > j ) p[1]++;
+                else if(x[k]>i && y[k] < j ) p[2]++;
+                else if(x[k]<i && y[k] < j ) p[3]++;
             }
             
             int m=0;
