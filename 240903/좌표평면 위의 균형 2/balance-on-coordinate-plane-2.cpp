@@ -14,8 +14,8 @@ int main() {
 
     bool flag=false;
 
-    for(int i=0; i<=100; i++){ // x축 고르기
-        for(int j=0; j<=100; j++){ //y축 고르기
+    for(int i=0; i<=100; i=i+2){ // x축 고르기
+        for(int j=0; j<=100; j=j+2 ){ //y축 고르기
             memset(p, 0, sizeof(p)); 
 
             for(int k=0; k<n; k++){
