@@ -22,13 +22,15 @@ bool isPossible(int upper){
 int main() {
 
     cin >> n >> k;
-
+    int max_num=100;
     for(int i=0; i<n; i++){
         cin >> a[i];
+        max_num=max(max_num, a[i]);
+
     }
 
-    int ret=0;
-    for(int u=n; u>=max(a[0], a[n-1]); u--){
+    int ret=100;
+    for(int u=100; u>=max(a[0], a[n-1]); u--){
         if(isPossible(u)) {
             ret=min(ret, u);
         }
