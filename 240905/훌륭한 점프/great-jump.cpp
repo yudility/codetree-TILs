@@ -11,7 +11,9 @@ bool isPossible(int upper){
     }
 
     for(int j=1; j<v.size(); j++){
-        if(v[j] - v[j-1]>k) return false;
+        if((v[j] - v[j-1])>k){
+            return false;
+        }
     }
 
     return true;
@@ -25,13 +27,10 @@ int main() {
         cin >> a[i];
     }
 
-    int ret;
-    for(int u=n; u>=1; u--){
+    int ret=987654321;
+    for(int u=n; u>=max(a[0], a[n-1]); u--){
         if(isPossible(u)) {
-            ret=u;
-        }
-        else{
-            break;
+            ret=min(ret, u);
         }
     }
 
