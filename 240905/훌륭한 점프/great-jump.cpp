@@ -27,7 +27,7 @@ int main() {
         cin >> a[i];
     }
 
-    int ret=987654321;
+    int ret=0;
     for(int u=n; u>=max(a[0], a[n-1]); u--){
         if(isPossible(u)) {
             ret=min(ret, u);
