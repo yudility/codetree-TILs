@@ -9,6 +9,7 @@ int get_dis(){
     int dis=n;
 
     for(int i = 0; i < n; i++){
+        if(str[i]=='0') continue;
         for(int j = i + 1; j < n;  j++){
             if( str[i]=='1' && str[j]=='1'){
                 dis = min(dis, j-i);
