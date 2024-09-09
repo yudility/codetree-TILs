@@ -23,12 +23,14 @@ int main() {
 
         for(int j=1; j<n; j++){
             v.push_back(s[j-1]-v[j-1]);
-            used[s[j-1]-v[j-1]]++;
+            if(s[j-1]-v[j-1]>0 && s[j-1]-v[j-1]<=n){
+                used[s[j-1]-v[j-1]]++;
+            }
         }
 
         bool flag=true;
         for(int j=0; j<n; j++){
-            if(v[j]<=0 || used[v[j]] >1){
+            if(v[j]<=0 || v[j]>n || used[v[j]] >1){
                 flag=false;
                 break;
             }
