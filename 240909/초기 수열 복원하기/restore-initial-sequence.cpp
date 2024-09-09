@@ -28,7 +28,7 @@ int main() {
 
         bool flag=true;
         for(int j=1; j<=n; j++){
-            if(used[j]>1){
+            if(used[j]>1 || used[0]!=0){
                 flag=false;
                 break;
             }
