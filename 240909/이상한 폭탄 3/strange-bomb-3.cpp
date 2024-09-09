@@ -19,16 +19,15 @@ int main() {
         int num=b[i];
         int prev=i;
         if(h.find(num)!=h.end()) continue;
+        h[num]=0;
         for(int j=i+1; j<n; j++){
-            if( b[j]==num && prev-j <= k){
-                if(h.find(num)==h.end()){
-                    h[num]=0;
-                }
-                else{
-                    h[num]++;
-                }
+            if( b[j]==num && j-prev <= k){
+                h[num]++;
                 prev=j;
-            } 
+            }
+            else if(b[j]==num){
+                prev=j;
+            }
         }
         if(h[num]>max_b){
             ans=num;
