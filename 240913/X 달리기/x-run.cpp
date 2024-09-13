@@ -9,41 +9,27 @@ int main() {
     cin >> x;
 
     int v=1;
-    int now=0;
+    int left_dist=x;
     int time=0;
 
-    now+=v;
-    time++;
-
     while(true){
-        if((x-now)>= (v*(v-1))/2){ // 가속하기
-            v++;
-            now+=v;
-            time++;
-            
-        }else
-        { 
-            now-=v;
-            v--;
-            time--;
-            break;    
-        }
-    }
-
-    
-    
-    int left_dist=x-now;
-                        
-
-    while(left_dist>0){
-        if((left_dist-v)<(v*(v-1))/2){
-            v--;
-        }
         left_dist-=v;
-        time++;
+        time++; 
+
+        if(left_dist==0){
+            break;
+        }
+
+        if(left_dist>=((v+1)*(v+2))/2){
+            v++;
+        }
+        else if(left_dist >=(v*(v+1))/2 ){
+            continue;
+        }else{
+            v--;
+        }
 
     }
-
   
 
 
