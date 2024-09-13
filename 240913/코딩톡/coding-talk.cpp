@@ -16,6 +16,9 @@ int main() {
     if(u[p-1]>0){
         for(int i=p-1; i<m; i++){
             visited[(int)(c[i]-65)]++;
+            if(p>=2 && c[i-1]!=c[i] && u[i-1]==u[i]){
+                visited[(int)(c[i-1]-65)]++;
+            }
         }
 
         for(int i=0; i<n; i++){
