@@ -22,7 +22,7 @@ int main() {
         t_e=x;
     }
 
-    ret=(e-s, abs(t_s-s)+abs(t_e-e));
+    ret=min(abs(e-s), abs(t_s-s)+abs(t_e-e));
 
     cout << ret;
 
