@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, u[100], p, visited[26];
+int n, m, u[100], p, isRead[26];
 char c[100];
 
 int main() {
@@ -13,20 +13,25 @@ int main() {
         cin >> c[i] >> u[i];
     }
 
-    if(u[p-1]>0){
-        for(int i=p-1; i<m; i++){
-            visited[(int)(c[i]-65)]++;
-            if(p>=2 && c[i-1]!=c[i] && u[i-1]==u[i]){
-                visited[(int)(c[i-1]-65)]++;
-            }
-        }
-
-        for(int i=0; i<n; i++){
-            if(visited[i]==0){
-                cout<< (char)(i+65) <<" ";
+    
+    for(int i=m; i>=p-1; i--){
+        isRead[(int)(c[i]-65)]++; //보낸 사람은 읽었음
+        if(i==(p-1) && u[i-1]==u[i]){
+            for(int j=1; j<=p-1; j++){
+                if(u[i]==u[i-j]) isRead[(int)(c[i-j]-65)]++;
+                else break;
             }
         }
     }
+    
+    
+
+    for(int i=0; i<n; i++){
+        if(isRead[i]==0){
+            cout<< (char)(i+65) <<" ";
+        }
+    }
+    
 
 
 
