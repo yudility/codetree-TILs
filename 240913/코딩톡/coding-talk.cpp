@@ -13,15 +13,18 @@ int main() {
         cin >> c[i] >> u[i];
     }
 
-    
-    for(int i=m; i>=p-1; i--){
-        isRead[(int)(c[i]-65)]++; //보낸 사람은 읽었음
-        if(i==(p-1) && u[i-1]==u[i]){
-            for(int j=1; j<=p-1; j++){
-                if(u[i]==u[i-j]) isRead[(int)(c[i-j]-65)]++;
-                else break;
+    if(u[p-1]>0){
+        for(int i=m; i>=p-1; i--){
+            isRead[(int)(c[i]-65)]++; //보낸 사람은 읽었음
+            if(i==(p-1) && u[i-1]==u[i]){
+                for(int j=1; j<=p-1; j++){
+                    if(u[i]==u[i-j]) isRead[(int)(c[i-j]-65)]++;
+                    else break;
+                }
             }
         }
+    }else{
+        memset(isRead, 1,sizeof(isRead));
     }
     
     
