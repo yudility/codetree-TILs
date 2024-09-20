@@ -15,7 +15,7 @@ int main() {
     d1=a[1]-a[0];
     d2=a[2]-a[1];
 
-    if(d1==0 && d2==0) cout << 0;
+    if(d1==1 && d2==1) cout << 0;
     else if(d1==2 || d2==2) cout << 1;
     else cout << 2;
 
