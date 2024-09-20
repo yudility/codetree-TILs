@@ -16,7 +16,7 @@ int main() {
     for(int i=1; i<n; i++){
         a[i]=s[i];
         if(a[i]=='1'){
-            int d = i-prev-1;
+            int d = i-prev;
             if(d>max_dist){
                 l=prev;
                 r=i;
@@ -24,8 +24,18 @@ int main() {
             prev=i;
         }
     }
+    
+    a[(l+r)/2]='1';
+    
+    prev=0;
+    for(int i=1; i<n; i++){
+        if(a[i]=='1'){
+            ret=min(ret,i-prev);
+            prev=i;
+        }
+    }
 
-    cout << (r-l)/2;
+    cout << ret;
 
     return 0;
 }
