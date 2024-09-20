@@ -20,6 +20,7 @@ int main() {
             if(d>max_dist){
                 l=prev;
                 r=i;
+                max_dist=d;
             }
             prev=i;
         }
