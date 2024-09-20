@@ -24,18 +24,8 @@ int main() {
             prev=i;
         }
     }
-    
-    a[(l+r/2)]='1';
-    
-    prev=0;
-    for(int i=1; i<n; i++){
-        if(a[i]=='1'){
-            ret=min(ret,i-prev-1);
-            prev=i;
-        }
-    }
 
-    cout << ret;
+    cout << (r-l)/2;
 
     return 0;
 }
