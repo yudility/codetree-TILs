@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, ret;
+int n, ret=10000;
 string s;
 char a[1001];
 
@@ -16,7 +16,7 @@ int main() {
     for(int i=1; i<n; i++){
         a[i]=s[i];
         if(a[i]=='1'){
-            int d = i-prev-2;
+            int d = i-prev-1;
             if(d>max_dist){
                 l=prev;
                 r=i;
@@ -30,7 +30,7 @@ int main() {
     prev=0;
     for(int i=1; i<n; i++){
         if(a[i]=='1'){
-            ret=max(ret,i-prev-2);
+            ret=min(ret,i-prev-1);
             prev=i;
         }
     }
