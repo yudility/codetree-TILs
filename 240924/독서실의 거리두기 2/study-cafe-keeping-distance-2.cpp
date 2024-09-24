@@ -22,7 +22,7 @@ void getStartEnd(){
 
 int getMinDist(int start_, int end_){
     int prev=start_;
-    int min_dist=10000;
+    int min_dist=n-1;
     for(int i= start_+1; i<=end_; i++){
         if(s[i]=='1'){
             min_dist=min(min_dist, i-prev);
@@ -39,6 +39,12 @@ int main() {
     cin >> s; 
 
     getStartEnd();
+
+    if(start == e){
+        ret=max(n-1-start, start);
+        cout<<ret;
+        return 0;
+    }
 
     int prev = start; 
     int left=0, right=n-1;
