@@ -10,9 +10,7 @@ int main() {
 
     for(int i=0; i<n; i++) {
         cin >> a[i];
-        p1=min(p1, a[i]);
     }
-
     for(int i=0; i<n; i++){
         if(p1<a[i]){
             p3=p2;
@@ -35,6 +33,8 @@ int main() {
             m2=a[i];
         }
     } 
+
+
 
     ret=max(p1*p2*p3, p1*m1*m2);
 
