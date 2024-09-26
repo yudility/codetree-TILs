@@ -22,9 +22,11 @@ int main() {
                     find=true;
                     value=j;
                     break;
+                }else if(num[j]>1){
+                    break;
                 }
             }
-            if(find) break;
+            break;
         }
     }
 
