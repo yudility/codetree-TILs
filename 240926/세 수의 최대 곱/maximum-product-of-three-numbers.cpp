@@ -2,41 +2,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, a[100001], p1, p2, p3, m1, m2,ret;
+int n, ret;
+vector<int> a;
 
 int main() {
 
     cin >> n;
 
     for(int i=0; i<n; i++) {
-        cin >> a[i];
+        int num;
+        cin >> num;
+        a.push_back(num);
     }
-    for(int i=0; i<n; i++){
-        if(p1<a[i]){
-            p3=p2;
-            p2=p1;
-            p1=a[i];
-        }
-        else if(p2<a[i]){
-            p3=p2;
-            p2=a[i];
-        }
-        else if(p3<a[i]){
-            p3=a[i];
-        }
+    
+    sort(a.begin(), a.end());
 
-        if(m1>a[i]){
-            m2=m1;
-            m1=a[i];
-        }
-        else if(m2>a[i]){
-            m2=a[i];
-        }
-    } 
-
-
-
-    ret=max(p1*p2*p3, p1*m1*m2);
+    ret=max(a[n-1]*a[n-2]*a[n-3], a[0]*a[1]*a[n-1]);
 
     cout << ret;
 
