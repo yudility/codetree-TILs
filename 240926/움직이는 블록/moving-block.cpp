@@ -19,13 +19,7 @@ int main() {
 
     for(int i=0; i<n; i++){
         if(a[i]<avg){
-            for(int j=n-1; j>i; j--){
-                while(a[j]>avg){
-                    a[i]++;
-                    a[j]--;
-                    cnt++;
-                }
-            }
+            cnt+= avg-a[i];
         }
     }
 
