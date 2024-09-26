@@ -26,9 +26,15 @@ int main() {
         }
     }
     ret = abs(lx-bx)+abs(ly-by)-1; 
-
-    if((lx==rx && rx==bx) || (ly==ry && ry==by)){
-        ret+=2;
+    if((lx < rx && rx < bx) || (bx < rx && rx < lx) ){ //r이 bx, lx 사이에 있으면서
+        if (ly==ry && ry==by){ //y좌표가 같다면
+            ret+=2;
+        }
+    }
+    else if((ly < ry && ry < by) || (by < ry && ry < ly)){ //r이 by, ly 사이에 있으면서
+        if(lx==rx && rx==bx){ //x좌표가 같다면
+            ret+=2;
+        }
     }
 
     cout << ret;
