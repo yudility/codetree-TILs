@@ -25,8 +25,11 @@ int main() {
             }  
         }
     }
-
     ret = abs(lx-bx)+abs(ly-by)-1; 
+
+    if((lx==rx && rx==bx) || (ly==ry && ry==by)){
+        ret+=2;
+    }
 
     cout << ret;
 
