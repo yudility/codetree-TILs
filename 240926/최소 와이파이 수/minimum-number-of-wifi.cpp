@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, a[101], ret, start;
+int n, m, a[101], ret, start=-1;
 
 int main() {
 
