@@ -2,8 +2,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, digit_max, max_e;
+int n, digit_max, max_e=0;
 vector<int> a;
+
+int get_digit(int num, int place) {
+    return (num / place) % 10;
+}
 
 int main() {
 
@@ -21,15 +25,20 @@ int main() {
         digit_max++;
     }
 
-    for(int p=digit_max; p>=0; p--){
+    for(int p = 1; p <= digit_max; p++) {
         vector<int> new_arr[10];
-        for(int i=0; i<a.size(); i++){
-            
-            int digit = a[i]/pow(10,digit_max-p);
+
+        int place_value = 1;
+        for (int i = 1; i < p; ++i) place_value *= 10;
+
+         for(int i = 0; i < a.size(); i++) {
+            int digit = get_digit(a[i], place_value);
             new_arr[digit].push_back(a[i]);
         }
+
         vector<int> store;
-        for(int i=0; i<10; i++){
+
+        for(int i=0; i<10; i++){   
             for(int j=0; j< new_arr[i].size();j++){
                 store.push_back(new_arr[i][j]);
             }
